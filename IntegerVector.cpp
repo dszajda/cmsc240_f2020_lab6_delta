@@ -25,7 +25,7 @@ int IntegerVector::get(int index)
 // otherwise, use push_back to append to the end of the vector
 void IntegerVector::put(int value, int index)
 {
-   if (index >= 0 && index < integerVector.size()){
+   if (index >= 0 && static_cast<unsigned int>(index) < integerVector.size()){
       integerVector.at(index) = value;
    }
 
@@ -44,7 +44,7 @@ void IntegerVector::put(int value)
 // integer to integerVector
 void IntegerVector::appendCharacterVector(CharacterVector& characterVector)
 {
-   for (int i = 0; i++; i < characterVector.size()){
+   for (int i = 0; i < characterVector.size(); i++){
       int newInt = static_cast<int> (characterVector.get(i));
       integerVector.push_back(newInt);
    }
@@ -54,7 +54,7 @@ void IntegerVector::appendCharacterVector(CharacterVector& characterVector)
 // integer to integerVector
 void IntegerVector::appendDoubleVector(DoubleVector& doubleVector)
 {
-  for (int i = 0; i++; i < doubleVector.size()){
+  for (int i = 0; i < doubleVector.size(); i++){
       int newInt = static_cast<int> (doubleVector.get(i));
       integerVector.push_back(newInt);
    }
