@@ -1,5 +1,5 @@
 #ifndef __CHARACTER_VECTOR_H__
-#define __CHARACTER_VECTOR_H__
+#define __CHARACTER_VECTOR_H__ 
 
 #include <vector>
 

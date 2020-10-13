@@ -60,7 +60,7 @@ void CharacterVector::appendDoubleVector(DoubleVector& doubleVector)
 void CharacterVector::appendIntegerVector(IntegerVector& integerVector)
 {
 	int size = integerVector.size();
-	for (int i = size -1; i >= 0; i--)
+	for (int i = 0; i < size; i++)
 	{
 		char c = static_cast<char> (integerVector.get(i));
 		characterVector.push_back(c);
