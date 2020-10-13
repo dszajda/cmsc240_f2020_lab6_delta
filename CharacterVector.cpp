@@ -26,7 +26,7 @@ void CharacterVector::put(char value, int index)
 {
 	if (index < characterVector.size() - 1 && index>=0)
 	{
-		auto it = characterVector.insert(characterVector.begin() + index, value);
+		characterVector.at(index) = value;
 	}
 	else
 		characterVector.push_back(value);
