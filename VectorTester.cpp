@@ -18,6 +18,24 @@ int main()
    std::cout << "CharacterVector:" << std::endl;
    std::cout << "----------------" << std::endl;
 
+   std::cout << "Predicted Size: 0" << "|| " << "Actual : " <<  cv.size() <<std::endl;
+   cv.put(10, 0);
+   cv.put(20, 1);
+   cv.put(15, 2);
+   std::cout << "Predicted Value: 10 " << "|| " << "Actual : " <<  cv.get(0) <<std::endl;
+   std::cout << "Predicted Value: 20 " << "|| " << "Actual : " <<  cv.get(1) <<std::endl;
+   std::cout << "Predicted Value: 15 " << "|| " << "Actual : " <<  cv.get(2) <<std::endl;
+   cv.put(7, 0);
+   cv.put(9, 1);
+   cv.put(11, 2);
+   std::cout << "Predicted Value: 7 " << "|| " << "Actual : " << cv.get(0) <<std::endl;
+   std::cout << "Predicted Value: 9 " << "|| " << "Actual : " <<  cv.get(1) <<std::endl;
+   std::cout << "Predicted Value: 11 " << "|| " << "Actual : " <<  cv.get(2) <<std::endl;
+   std::cout << "Predicted Size: 3 " << "|| " << "Actual : " <<  cv.size() <<std::endl;
+   std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(3) <<std::endl;
+   std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(-1) <<std::endl;
+   std::cout << "--------------" << std::endl;
+
    //-------------------------------------------------------------------------
 
    // test DoubleVector: put, get, size, out_of_range
