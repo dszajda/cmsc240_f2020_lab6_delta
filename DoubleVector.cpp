@@ -5,7 +5,6 @@
 #include "DoubleVector.h"
 #include "IntegerVector.h"
 
-using namespace std;
 
 DoubleVector::DoubleVector()  {}
 DoubleVector::~DoubleVector() {}
@@ -26,7 +25,7 @@ double DoubleVector::get(int index)
 // otherwise, use push_back to append to the end of the vector
 void DoubleVector::put(double value, int index)
 {
-	if(index < 0 || index >= doubleVector.size()){
+	if(index < 0 || static_cast<unsigned int>(index) >= doubleVector.size()){
 		doubleVector.push_back(value);
 	}
 	else
@@ -43,7 +42,7 @@ void DoubleVector::put(double value)
 // double to doubleVector
 void DoubleVector::appendCharacterVector(CharacterVector& characterVector)
 {
-	for(index = 0, index < characterVector.size(), index++){
+	for(int index = 0; index < characterVector.size(); index++){
 		double newDouble = static_cast<double>(characterVector.get(index));
 		doubleVector.push_back(newDouble);
 	}
@@ -53,8 +52,8 @@ void DoubleVector::appendCharacterVector(CharacterVector& characterVector)
 // double to doubleVector
 void DoubleVector::appendIntegerVector(IntegerVector& integerVector)
 {
-	for(index = 0, index < integerVector.size(), index++){
-		double newDouble = static_cast<double>(characterVector.get(index));
+	for(int index = 0; index < integerVector.size(); index++){
+		double newDouble = static_cast<double>(integerVector.get(index));
 		doubleVector.push_back(newDouble);
 	}
 		
