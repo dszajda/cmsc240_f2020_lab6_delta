@@ -25,12 +25,6 @@ char CharacterVector::get(int index)
 // otherwise, use push_back to append to the end of the vector
 void CharacterVector::put(char value, int index)
 {
-try {
-std::cout << cv.get(-1) << std::endl;
-} catch (const std::out_of_range& oor) {
-std::cerr << "Out of Range error: " << oor.what() << std::endl;
-}
-	else
 		characterVector.push_back(value);
 }
 
