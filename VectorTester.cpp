@@ -31,8 +31,8 @@ int main()
    std::cout << "Predicted Value: e " << "|| " << "Actual : " <<  cv.get(1) <<std::endl;
    std::cout << "Predicted Value: f " << "|| " << "Actual : " <<  cv.get(2) <<std::endl;
    std::cout << "Predicted Size: 3 " << "|| " << "Actual : " <<  cv.size() <<std::endl;
-   std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(3) <<std::endl;
-   std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(-1) <<std::endl;
+ //  std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(3) <<std::endl;
+ //  std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(-1) <<std::endl;
    std::cout << "--------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -43,6 +43,7 @@ int main()
    std::cout << "-------------" << std::endl;
    std::cout << "DoubleVector:" << std::endl;
    std::cout << "-------------" << std::endl;
+  // std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << dv.get(3) <<std::endl;
 
    //-------------------------------------------------------------------------
 
@@ -60,7 +61,7 @@ int main()
    std::cout << "Predicted: 120 " << "|| " << "Actual : " << iv.get(0) <<std::endl;
    std::cout << "Predicted: 50 " << "|| " << "Actual : " <<  iv.get(2) <<std::endl;
    std::cout << "Predicted: 3 " << "|| " << "Actual : " <<  iv.size() <<std::endl;
-   std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << iv.get(3) <<std::endl;
+  // std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << iv.get(3) <<std::endl;
    std::cout << "--------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -91,6 +92,11 @@ int main()
    std::cout << std::endl;
    std::cout << "--------------------------" << std::endl;
    std::cout << "appended-to IntegerVector:" << std::endl;
+   iv2.appendCharacterVector(cv);
+   iv2.appendDoubleVector(dv);
+   for (int i = 0; i < iv2.size(); i++){
+   std::cout << "dv2 [" << i << "] = " << iv2.get(i) <<std::endl;
+   }
    std::cout << "--------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
