@@ -4,7 +4,6 @@
 #include "CharacterVector.h"
 #include "DoubleVector.h"
 #include "IntegerVector.h"
-#include <vector>
 
 IntegerVector::IntegerVector()  {}
 IntegerVector::~IntegerVector() {}

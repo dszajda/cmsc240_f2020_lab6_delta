@@ -24,20 +24,18 @@ char CharacterVector::get(int index)
 // otherwise, use push_back to append to the end of the vector
 void CharacterVector::put(char value, int index)
 {
-	if (index < characterVector.size() - 1 && index>=0)
+	if (static_cast<unsigned int>(index) < characterVector.size() && index>=0)
 	{
 		characterVector.at(index) = value;
 	}
 	else
 		characterVector.push_back(value);
-	return;
 }
 
 // use push_back to append
 void CharacterVector::put(char value)
 {
 	characterVector.push_back(value);
-	return;
 }
 
 // for each double in doubleVector, use static_cast<char> to append as a
@@ -51,8 +49,6 @@ void CharacterVector::appendDoubleVector(DoubleVector& doubleVector)
 		char c = static_cast<char> (integer);
 		characterVector.push_back(c);
 	}
-
-	return;
 }
 
 // for each integer in integerVector, use static_cast<char> to append as a
@@ -65,8 +61,7 @@ void CharacterVector::appendIntegerVector(IntegerVector& integerVector)
 		char c = static_cast<char> (integerVector.get(i));
 		characterVector.push_back(c);
 
-	}
-	return;
+        }
 }
 
 #endif
