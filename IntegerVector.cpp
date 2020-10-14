@@ -17,11 +17,7 @@ int IntegerVector::size()
 // than [] so that an out_of_range error will be thrown for an invalid index
 int IntegerVector::get(int index)  
 { 
-   try {
-std::cout << iv.get(-1) << std::endl;
-} catch (const std::out_of_range& oor) {
-std::cerr << "Out of Range error: " << oor.what() << std::endl;
-}
+  
    return integerVector.at(index);
 }
 

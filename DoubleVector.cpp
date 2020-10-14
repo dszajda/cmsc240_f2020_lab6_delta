@@ -18,11 +18,7 @@ int DoubleVector::size()
 // than [] so that an out_of_range error will be thrown for an invalid index
 double DoubleVector::get(int index) 
 { 
-	try {
-std::cout << dv.get(-1) << std::endl;
-} catch (const std::out_of_range& oor) {
-std::cerr << "Out of Range error: " << oor.what() << std::endl;
-}
+	
 	return doubleVector.at(index);
 }
 
