@@ -30,7 +30,7 @@ int main()
    std::cout << "Predicted Value: d " << "|| " << "Actual : " << cv.get(0) <<std::endl;
    std::cout << "Predicted Value: e " << "|| " << "Actual : " <<  cv.get(1) <<std::endl;
    std::cout << "Predicted Value: f " << "|| " << "Actual : " <<  cv.get(2) <<std::endl;
-   std::cout << "Predicted Size: 3 " << "|| " << "Actual : " <<  cv.size() <<std::endl;
+   std::cout << "Predicted Size: 3 " << "|| " << "Actual : " <<  cv.size() <<std::endl;D
  //  std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(3) <<std::endl;
  //  std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(-1) <<std::endl;
    std::cout << "--------------" << std::endl;
@@ -61,7 +61,7 @@ int main()
    std::cout << "Predicted: 120 " << "|| " << "Actual : " << iv.get(0) <<std::endl;
    std::cout << "Predicted: 50 " << "|| " << "Actual : " <<  iv.get(2) <<std::endl;
    std::cout << "Predicted: 3 " << "|| " << "Actual : " <<  iv.size() <<std::endl;
-  // std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << iv.get(3) <<std::endl;
+   // std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << iv.get(3) <<std::endl;
    std::cout << "--------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -74,7 +74,18 @@ int main()
    std::cout << "appended-to CharacterVector:" << std::endl;
    std::cout << "----------------------------" << std::endl;
 
-   //-------------------------------------------------------------------------
+   cv2.appendIntegerVector(iv);
+   for (int i = 0; i < cv2.size(); i++)
+   {
+      std::cout << cv2.get(i) << std::endl;
+
+   }
+
+   cv2.appendDoubleVector(dv);
+      for (int i = 0; i < cv2.size(); i++)
+   {
+      std::cout << cv2.get(i) << std::endl;
+   }
 
    // using empty DoubleVector, test appending iv & cv from above
    DoubleVector dv2;
@@ -84,7 +95,20 @@ int main()
    std::cout << "appended-to DoubleVector:" << std::endl;
    std::cout << "-------------------------" << std::endl;
 
-   //-------------------------------------------------------------------------
+   dv2.appendCharacterVector(cv);
+   for (int i = 0; i < dv2.size(); i++)
+   {
+      std::cout << dv2.get(i) << std::endl;
+
+   }
+
+   dv2.appendIntegerVector(iv);
+   for (int i = 0; i < dv2.size(); i++)
+   {
+      std::cout << dv2.get(i) << std::endl;
+   }
+
+ 
 
    // using empty IntegerVector, test appending cv & dv from above 
    IntegerVector iv2;
@@ -99,7 +123,18 @@ int main()
    }
    std::cout << "--------------------------" << std::endl;
 
-   //-------------------------------------------------------------------------
+   iv2.appendCharacterVector(cv);
+   for (int i = 0; i < iv2.size(); i++)
+   {
+      std::cout << iv2.get(i) << std::endl;
+
+   }
+
+   iv2.appendDoubleVector(dv);
+      for (int i = 0; i < iv2.size(); i++)
+   {
+      std::cout << iv2.get(i) << std::endl;
+   }
 
    return 0;
 }
