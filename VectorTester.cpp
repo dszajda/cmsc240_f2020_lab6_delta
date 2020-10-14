@@ -33,8 +33,12 @@ int main()
    std::cout << "Predicted Value: e " << "|| " << "Actual : " <<  cv.get(1) <<std::endl;
    std::cout << "Predicted Value: f " << "|| " << "Actual : " <<  cv.get(2) <<std::endl;
    std::cout << "Predicted Size: 3 " << "|| " << "Actual : " <<  cv.size() <<std::endl;
- //  std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(3) <<std::endl;
- //  std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << cv.get(-1) <<std::endl;
+   try{
+   cout << cv.get(5) << endl;
+   }
+   catch(const out_of_range& oor){
+   cerr << "Out of Range error: " << endl;
+   }
    std::cout << "--------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -63,10 +67,12 @@ int main()
    std::cout << "Predicted vector size: 4" << "||" << "Actual size: " << dv.size() << endl;
    
    //testing out_of_range
- //  cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(4) << endl;
- //  cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(-1) << endl;
-   // cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(4) << endl;
-   // cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(-1) << endl;
+   try{
+   cout << dv.get(4) << endl;
+   }
+   catch(const out_of_range& oor){
+   cerr << "Out of Range error: " << oor.what() << endl;
+   }
    cout << "-------------" << endl;
 
 
@@ -86,7 +92,12 @@ int main()
    std::cout << "Predicted: 120 " << "|| " << "Actual : " << iv.get(0) <<std::endl;
    std::cout << "Predicted: 50 " << "|| " << "Actual : " <<  iv.get(2) <<std::endl;
    std::cout << "Predicted: 3 " << "|| " << "Actual : " <<  iv.size() <<std::endl;
-   // std::cout << "Predicted: out_of_range error " << "|| " << "Actual: " << iv.get(3) <<std::endl;
+   try{
+   cout << iv.get(-1) << endl;
+   }
+   catch(const out_of_range& oor){
+   cerr << "Out of Range error: " << oor.what() << endl;
+   }
    std::cout << "--------------" << std::endl;
 
    //-------------------------------------------------------------------------
