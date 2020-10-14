@@ -50,14 +50,14 @@ int main()
    cout << "Predicted vector size: 0" << "||" << "Actual size: " << dv.size() << endl;
 
    //testing the put and get index functions
-   dv.put(1.1, 0);
-   dv.put(1.2, 1);
-   dv.put(1.3, 2);
-   dv.put(1.4, 3);
-   cout << "Predicted value: 1.1 " << "||" << "Actual value: " << dv.get(0) << endl;
-   cout << "Predicted value: 1.2 " << "||" << "Actual value: " << dv.get(1) << endl;
-   cout << "Predicted value: 1.3 " << "||" << "Actual value: " << dv.get(2) << endl;
-   cout << "predicted value: 1.4 " << "||" << "Actual value: " << dv.get(3) << endl;
+   dv.put(40.12, 0);
+   dv.put(60.98, 1);
+   dv.put(90.23, 2);
+   dv.put(110.33, 3);
+   cout << "Predicted value: 40.12 " << "||" << "Actual value: " << dv.get(0) << endl;
+   cout << "Predicted value: 60.98 " << "||" << "Actual value: " << dv.get(1) << endl;
+   cout << "Predicted value: 90.23 " << "||" << "Actual value: " << dv.get(2) << endl;
+   cout << "Predicted value: 110.33 " << "||" << "Actual value: " << dv.get(3) << endl;
 
    //testing the size() function again
    std::cout << "Predicted vector size: 4" << "||" << "Actual size: " << dv.size() << endl;
@@ -65,6 +65,8 @@ int main()
    //testing out_of_range
  //  cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(4) << endl;
  //  cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(-1) << endl;
+   // cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(4) << endl;
+   // cout << "Predicted: out_of_range error " << "||" << "Actual error: " << dv.get(-1) << endl;
    cout << "-------------" << endl;
 
 
@@ -97,17 +99,19 @@ int main()
    std::cout << "appended-to CharacterVector:" << std::endl;
    std::cout << "----------------------------" << std::endl;
 
+   std::cout << "Testing appendIntegerVector():" << std::endl;
    cv2.appendIntegerVector(iv);
    for (int i = 0; i < cv2.size(); i++)
    {
-      std::cout << cv2.get(i) << std::endl;
+      std::cout << "cv2 [" << i << "] = " << cv2.get(i) << std::endl;
 
    }
 
+   std::cout << "Testing appendDoubleVector():" << std::endl;
    cv2.appendDoubleVector(dv);
       for (int i = 0; i < cv2.size(); i++)
    {
-      std::cout << cv2.get(i) << std::endl;
+      std::cout << "cv2 [" << i << "] = " << cv2.get(i) << std::endl;
    }
 
    // using empty DoubleVector, test appending iv & cv from above
@@ -118,17 +122,19 @@ int main()
    std::cout << "appended-to DoubleVector:" << std::endl;
    std::cout << "-------------------------" << std::endl;
 
+   std::cout << "Testing appendCharacterVector():" << std::endl;
    dv2.appendCharacterVector(cv);
    for (int i = 0; i < dv2.size(); i++)
    {
-      std::cout << dv2.get(i) << std::endl;
+      std::cout << "dv2 [" << i << "] = " << dv2.get(i) << std::endl;
 
    }
 
+   std::cout << "Testing appendIntegerVector():" << std::endl;
    dv2.appendIntegerVector(iv);
    for (int i = 0; i < dv2.size(); i++)
    {
-      std::cout << dv2.get(i) << std::endl;
+      std::cout << "dv2 [" << i << "] = " << dv2.get(i) << std::endl;
    }
 
  
@@ -139,24 +145,21 @@ int main()
    std::cout << std::endl;
    std::cout << "--------------------------" << std::endl;
    std::cout << "appended-to IntegerVector:" << std::endl;
-   iv2.appendCharacterVector(cv);
-   iv2.appendDoubleVector(dv);
-   for (int i = 0; i < iv2.size(); i++){
-   std::cout << "dv2 [" << i << "] = " << iv2.get(i) <<std::endl;
-   }
    std::cout << "--------------------------" << std::endl;
 
+   std::cout << "Testing appendCharacterVector():" << std::endl;
    iv2.appendCharacterVector(cv);
    for (int i = 0; i < iv2.size(); i++)
    {
-      std::cout << iv2.get(i) << std::endl;
+      std::cout << "iv2 [" << i << "] = " << iv2.get(i) << std::endl;
 
    }
 
+   std::cout << "Testing appendDoubleVector():" << std::endl;
    iv2.appendDoubleVector(dv);
-      for (int i = 0; i < iv2.size(); i++)
+   for (int i = 0; i < iv2.size(); i++)
    {
-      std::cout << iv2.get(i) << std::endl;
+      std::cout << "iv2 [" << i << "] = " << iv2.get(i) << std::endl;
    }
 
    return 0;
